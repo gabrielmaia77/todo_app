@@ -1,0 +1,23 @@
+<div class="container">
+  <h1>Bem-vindo <%= @user.name %> 👋</h1>
+
+  <%= button_to "Logout", "/logout", method: :delete, class: "logout" %>
+
+  <%= form_with model: Task.new do |f| %>
+    <%= f.text_field :title, placeholder: "Nova tarefa..." %>
+    <%= f.submit "Adicionar" %>
+  <% end %>
+
+  <% @tasks.each do |task| %>
+    <div class="task">
+      <span class="<%= 'done' if task.done %>">
+        <%= task.title %>
+      </span>
+
+      <div>
+        <%= button_to "✔", task, method: :patch %>
+        <%= button_to "❌", task, method: :delete %>
+      </div>
+    </div>
+  <% end %>
+</div>

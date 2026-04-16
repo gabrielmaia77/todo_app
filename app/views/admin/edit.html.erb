@@ -1,0 +1,15 @@
+<div class="container">
+  <h1>Editar usuário</h1>
+
+  <%= form_with model: @user, local: true do |f| %>
+    <%= f.text_field :name, placeholder: "Nome" %><br>
+    <%= f.email_field :email, placeholder: "Email" %><br>
+    <%= f.text_field :password, placeholder: "Senha" %><br>
+
+    <%= f.submit "Salvar" %>
+  <% end %>
+
+  <br>
+
+  <%= link_to "Voltar", "/admin" %>
+</div> 
