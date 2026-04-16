@@ -35,9 +35,11 @@ bundle install
 
 docker compose up -d
 
-rails db:create db:migrate
+rails db:create db:migrate db:seed
 
 rails s
+
+(usuário admin : admin123@gmail.com senha 1234)
 ```
 
 A aplicação estará disponível em:
