@@ -39,7 +39,7 @@ rails db:create db:migrate db:seed
 
 rails s
 
-(usuário admin : admin123@gmail.com senha 1234)
+(usuário admin : admin123@gmail.com senha 1234) (dados apenas para teste)
 ```
 
 A aplicação estará disponível em:
