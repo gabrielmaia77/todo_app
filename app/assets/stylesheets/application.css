@@ -72,3 +72,166 @@ button:hover {
   color: #f87171;
   text-align: center;
 }
+ 
+.botao-link {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #3668d5; /* azul bonito */
+  color: white;
+  text-decoration: none; /* tira o underline */
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.botao-link:hover {
+  background-color: #778cd2; /* azul mais escuro */
+  transform: scale(1.05);
+  text-decoration: none;
+  color: #448aab;
+  margin-left: 10px;
+}
+
+.botao-link-danger {
+  background-color: #dc2626; /* vermelho */
+}
+
+.botao-link-danger:hover {
+  background-color: #991b1b;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0f172a;
+  color: white;
+}
+
+.titulo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.lista-usuarios {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.usuario-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e293b;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+
+.usuario-info {
+  font-size: 14px;
+}
+
+.acoes {
+  display: flex;
+  gap: 8px;
+}
+
+/* BOTÕES */
+.btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: white;
+}
+
+/* estilos */
+.btn-primary {
+  background-color: #2563eb;
+}
+
+.btn-edit {
+  background-color: #22c55e;
+}
+
+.btn-delete {
+  background-color: #ef4444;
+}
+
+.btn-logout {
+  background-color: #64748b;
+}
+
+/* hover */
+.btn:hover {
+  opacity: 0.8;
+}
+
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.input {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.input:focus {
+  box-shadow: 0 0 0 2px #2563eb;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 15px;
+}
+
+/* reaproveita botão que já fizemos */
+.btn {
+  padding: 10px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+}
+
+.btn-primary:hover {
+  background-color: #1e40af;
+}
+
+.form-container h1 {
+  text-align: center;
+}

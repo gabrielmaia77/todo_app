@@ -1,15 +1,21 @@
-<h1>Editar usuário</h1>
+<h1 class="titulo">Editar usuário</h1>
 
-<%= form_with model: @user do |f| %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+<div class="form-container">
+  <%= form_with model: @user, class: "form" do |f| %>
 
-  <div>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
+    <div class="form-group">
+      <%= f.label :name, "Nome" %>
+      <%= f.text_field :name, class: "input" %>
+    </div>
 
-  <%= f.submit "Salvar" %>
-<% end %>
+    <div class="form-group">
+      <%= f.label :email, "Email" %>
+      <%= f.text_field :email, class: "input" %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.submit "Salvar", class: "btn btn-primary" %>
+    </div>
+
+  <% end %>
+</div>

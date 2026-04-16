@@ -1,31 +1,35 @@
-require "test_helper"
+class TasksController < ApplicationController
+  before_action :require_user
 
-class TasksControllerTest < ActionDispatch::IntegrationTest
-  test "deve criar uma task com sucesso" do
-    user = User.create!(
-      name: "Teste",
-      email: "teste@email.com",
-      password: "123456"
-    )
+  def index
+    @user = User.find(session[:user_id])
+    @tasks = @user.tasks
+  end
 
-    # simula login (isso é essencial no seu app)
-    post login_url, params: {
-      email: user.email,
-      password: "123456"
-    }
+  def create
+    user = User.find(session[:user_id])
+    user.tasks.create(task_params)
+    redirect_to tasks_path
+  end
 
-    assert_response :redirect
+  def update
+    task = Task.find(params[:id])
+    task.update(done: !task.done)
+    redirect_to tasks_path
+  end
 
-    follow_redirect!
+  def destroy
+    Task.find(params[:id]).destroy
+    redirect_to tasks_path
+  end
 
-    assert_difference("Task.count", 1) do
-      post tasks_path, params: {
-        task: {
-          title: "Estudar Rails"
-        }
-      }
-    end
+  private
 
-    assert_response :redirect
+  def task_params
+    params.require(:task).permit(:title)
+  end
+
+  def require_user
+    redirect_to root_path unless session[:user_id]
   end
 end
