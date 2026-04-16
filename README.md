@@ -1,24 +1,62 @@
-# README
+# Todo App - Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Aplicação web para gerenciamento de tarefas desenvolvida com Ruby on Rails, utilizando PostgreSQL e Docker.
 
-Things you may want to cover:
+## Tecnologias
 
-* Ruby version
+* Ruby on Rails
+* PostgreSQL
+* Docker
+* JavaScript
+* Git
 
-* System dependencies
+## Conceitos
 
-* Configuration
+* Arquitetura MVC
+* ActiveRecord (ORM)
+* Migrations
+* Relacionamentos entre modelos
+* Autenticação com sessão
 
-* Database creation
+## Funcionalidades
 
-* Database initialization
+* Cadastro de usuário
+* Login e logout
+* CRUD de tarefas
+* Associação entre usuário e tarefas
 
-* How to run the test suite
+## Como rodar o projeto
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+git clone https://github.com/gabrielmaia77/todo_app.git
+cd todo_app
 
-* Deployment instructions
+bundle install
 
-* ...
+docker compose up -d
+
+rails db:create db:migrate
+
+rails s
+```
+
+A aplicação estará disponível em:
+
+http://localhost:3000
+
+## Estrutura
+
+* app/models: regras de negócio
+* app/controllers: controle de fluxo
+* app/views: interface
+* db/migrate: versionamento do banco
+
+## Banco de dados
+
+* PostgreSQL via Docker
+* Porta: 5433
+
+## Autor
+
+Gabriel Maia
+https://github.com/gabrielmaia77
