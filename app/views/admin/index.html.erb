@@ -5,6 +5,7 @@
   <%= button_to "Logout", "/logout", method: :delete, class: "btn btn-logout" %>
 </div>
 
+<!--Não exluir  usuario administrador-->
 <ul class="lista-usuarios">
   <% @users.each do |user| %>
     <li class="usuario-item">
@@ -15,10 +16,13 @@
       <div class="acoes">
         <%= link_to "Editar", edit_user_path(user), class: "btn btn-edit" %>
 
-        <%= button_to "Excluir", user_path(user),
-          method: :delete,
-          class: "btn btn-delete",
-          form: { style: "display:inline;" } %>
+        <% unless user.email == "admin123@gmail.com" %>
+          <%= button_to "Excluir", user_path(user),
+            method: :delete,
+            class: "btn btn-delete",
+            form: { style: "display:inline;" } %>
+        <% end %>
+        
       </div>
     </li>
   <% end %>
